@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happiness Survey</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100">
+    <header class="bg-blue-500 py-5 text-center">
+        <h1 class="text-4xl text-white font-bold">Happiness Meter</h1>
+      </header>
+      <main class="container mx-auto mt-8">
+        <section class="bg-white p-8 rounded-lg shadow-md">
+          <p class="text-lg">Happy: <span id="happyCount" class="font-bold">0</span></p>
+          <p class="text-lg">Normal: <span id="normalCount" class="font-bold">0</span></p>
+          <p class="text-lg">Sad: <span id="sadCount" class="font-bold">0</span></p>
+          <div class="mt-8 flex justify-center">
+            <button onclick="recordSurveyResponse('happy')" class="bg-green-500 hover:bg-green-600 text-white py-2 px-4 mr-2 rounded">Happy</button>
+            <button onclick="recordSurveyResponse('normal')" class="bg-yellow-500 hover:bg-yellow-600 text-white py-2 px-4 mr-2 rounded">Normal</button>
+            <button onclick="recordSurveyResponse('sad')" class="bg-red-500 hover:bg-red-600 text-white py-2 px-4 rounded">Sad</button>
+          </div>
+        </section>
+      </main>
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>
