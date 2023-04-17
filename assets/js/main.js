@@ -35,8 +35,8 @@ function closeQuestionsModal() {
     document.getElementById('questionsModal').classList.add('hidden');
 }
 
-// Function to record survey response
-function recordSurveyResponse() {
+// Function to submit the survey response
+function submitSurveyResponse() {
     var question1 = document.querySelector('input[name="question1"]:checked').value;
     var question2 = document.querySelector('input[name="question2"]:checked').value;
     var question3 = document.querySelector('input[name="question3"]:checked').value;
