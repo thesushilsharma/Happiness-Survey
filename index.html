@@ -9,64 +9,39 @@
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body class="bg-gray-100">
-    <header class="bg-blue-500 py-5 text-center">
-        <h1 class="text-4xl text-white font-bold">Happiness Meter</h1>
-    </header>
-    <main class="container mx-auto mt-8">
-        <section class="bg-white p-8 rounded-lg shadow-md">
-            <p class="text-lg">Happy: <span id="happyCount" class="font-bold">0</span></p>
-            <p class="text-lg">Normal: <span id="normalCount" class="font-bold">0</span></p>
-            <p class="text-lg">Sad: <span id="sadCount" class="font-bold">0</span></p>
-            <div class="mt-8 flex justify-center">
-                <button onclick="recordSurveyResponse('happy')"
-                    class="bg-green-500 hover:bg-green-600 text-white py-2 px-4 mr-2 rounded">Happy</button>
-                <button onclick="recordSurveyResponse('normal')"
-                    class="bg-yellow-500 hover:bg-yellow-600 text-white py-2 px-4 mr-2 rounded">Normal</button>
-                <button onclick="recordSurveyResponse('sad')"
-                    class="bg-red-500 hover:bg-red-600 text-white py-2 px-4 rounded">Sad</button>
-            </div>
-        </section>
+<body class="bg-gray-200">
+    <div class="container mx-auto">
+      <h1 class="text-3xl font-bold text-center my-8">Happiness Meter</h1>
+      <p class="text-lg font-medium text-center">
+        How would you rate our service?
+      </p>
+      <div class="flex justify-center my-8">
+        <button
+          class="mx-2 bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded"
+          onclick="rateService('happy')"
+        >
+          Happy
+        </button>
+        <button
+          class="mx-2 bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-2 px-4 rounded"
+          onclick="rateService('neutral')"
+        >
+          Neutral
+        </button>
+        <button
+          class="mx-2 bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded"
+          onclick="rateService('sad')"
+        >
+          Sad
+        </button>
+      </div>
 
-        <section>
-            <!-- Questions Modal -->
-            <div id="questionsModal"
-                class="fixed top-0 left-0 right-0 bottom-0 hidden bg-gray-900 bg-opacity-50 flex items-center justify-center">
-                <div class="bg-white p-8 rounded-lg max-w-md">
-                    <h2 class="text-2xl font-bold mb-4">What can we improve ?:</h2>
-                    <form>
-                        <label class="block mb-4">
-                            Question 1: Technical performance
-                            <input type="radio" name="question1" value="happy"> Happy
-                            <input type="radio" name="question1" value="normal"> Normal
-                            <input type="radio" name="question1" value="sad"> Sad
-                        </label>
-                        <label class="block mb-4">
-                            Question 2: Clarity of presentation?
-                            <input type="radio" name="question2" value="happy"> Happy
-                            <input type="radio" name="question2" value="normal"> Normal
-                            <input type="radio" name="question2" value="sad"> Sad
-                        </label>
-                        <label class="block mb-4">
-                            Question 3: Ease Of use?
-                            <input type="radio" name="question3" value="happy"> Happy
-                            <input type="radio" name="question3" value="normal"> Normal
-                            <input type="radio" name="question3" value="sad"> Sad
-                        </label>
-                        <div class="flex justify-end">
-                            <button type="button" onclick="closeQuestionsModal()"
-                                class="bg-gray-500 hover:bg-gray-600 text-white py-2 px-4 rounded">Close</button>
-                            <button type="submit"
-                                class="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 ml-2 rounded">Submit</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </section>
-        
-         <!-- End Questions Modal -->
-    </main>
+      <div class="mt-4" id="technicalPerformanceRating"></div>
+      <div class="mt-4" id="presentationClarityRating"></div>
+      <div class="mt-4" id="easeOfUseRating"></div>
+    </div>
+
     <script src="assets/js/main.js"></script>
-</body>
+  </body>
 
 </html>

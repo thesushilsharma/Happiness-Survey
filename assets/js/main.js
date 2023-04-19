@@ -1,49 +1,91 @@
-// Initialize survey response count
-var happyCount = 0;
-var normalCount = 0;
-var sadCount = 0;
+const ratings = {
+  happy: {
+    technicalPerformance: null,
+    presentationClarity: null,
+    easeOfUse: null,
+  },
+  neutral: {
+    technicalPerformance: null,
+    presentationClarity: null,
+    easeOfUse: null,
+  },
+  sad: {
+    technicalPerformance: null,
+    presentationClarity: null,
+    easeOfUse: null,
+  },
+};
 
-// Function to record survey response
-function recordSurveyResponse(response) {
-  switch (response) {
-    case 'happy':
-      happyCount++;
-      document.getElementById('happyCount').innerHTML = happyCount;
-      openQuestionsModal();
-      break;
-    case 'normal':
-      normalCount++;
-      document.getElementById('normalCount').innerHTML = normalCount;
-      break;
-    case 'sad':
-      sadCount++;
-      document.getElementById('sadCount').innerHTML = sadCount;
-      break;
-    default:
-      console.log('Invalid response');
-      break;
+function setRating(category, rating) {
+  // Remove the previously selected button
+  const prevSelected = document.querySelector(`#${category} .selected`);
+  if (prevSelected) {
+    prevSelected.classList.remove("selected");
+  }
+
+  // Add the "selected" class to the newly selected button
+  const selectedButton = event.target;
+  selectedButton.classList.add("selected");
+
+  // Update the ratings object
+  ratings[rating][category] = true;
+  console.log("Thank you for rating our service!");
+  console.log(ratings);
+
+  // Check if all ratings are complete
+  const isComplete =
+    Object.keys(ratings.happy).every(
+      category =>
+        ratings.happy[category] !== null &&
+        ratings.neutral[category] !== null &&
+        ratings.sad[category] !== null
+    );
+
+  if (isComplete) {
+    console.log("All ratings are complete!");
   }
 }
 
-// Function to open the questions modal
-function openQuestionsModal() {
-    document.getElementById('questionsModal').classList.remove('hidden');
-}
+function rateService(rating) {
+  const ratingContainer = document.createElement("div");
+  ratingContainer.id = `rating-${rating}`;
 
-// Function to close the questions modal
-function closeQuestionsModal() {
-    document.getElementById('questionsModal').classList.add('hidden');
-}
+  const technicalPerformanceRating = document.createElement("div");
+  technicalPerformanceRating.innerHTML = `
+  <div class="p-4">
+  <p class="text-lg font-medium mb-2">How was the technical performance?</p>
+  <div class="flex space-x-2">
+<button class="px-4 py-2 rounded-lg bg-green-500 text-white hover:bg-green-600 focus:outline-none" onclick="setRating('technicalPerformance', 'happy')">Happy</button>
+<button class="px-4 py-2 rounded-lg bg-gray-500 text-white hover:bg-gray-600 focus:outline-none" onclick="setRating('technicalPerformance', 'neutral')">Neutral</button>
+<button class="px-4 py-2 rounded-lg bg-red-500 text-white hover:bg-red-600 focus:outline-none" onclick="setRating('technicalPerformance', 'sad')">Sad</button>
+</div>
+</div>`;
+  ratingContainer.appendChild(technicalPerformanceRating);
 
-// Function to submit the survey response
-function submitSurveyResponse() {
-    var question1 = document.querySelector('input[name="question1"]:checked').value;
-    var question2 = document.querySelector('input[name="question2"]:checked').value;
-    var question3 = document.querySelector('input[name="question3"]:checked').value;
+  const presentationClarityRating = document.createElement("div");
+  presentationClarityRating.innerHTML = `
+  <div class="p-4">
+  <p class="text-lg font-medium mb-2">How was the presentation clarity?</p>
+  <div class="flex space-x-2">
+<button class="px-4 py-2 rounded-lg bg-green-500 text-white hover:bg-green-600 focus:outline-none" onclick="setRating('presentationClarity', 'happy')">Happy</button>
+<button class="px-4 py-2 rounded-lg bg-gray-500 text-white hover:bg-gray-600 focus:outline-none" onclick="setRating('presentationClarity', 'neutral')">Neutral</button>
+<button class="px-4 py-2 rounded-lg bg-red-500 text-white hover:bg-red-600 focus:outline-none" onclick="setRating('presentationClarity', 'sad')">Sad</button>
+</div>
+</div> 
+`;
+  ratingContainer.appendChild(presentationClarityRating);
+  const easeOfUseRating = document.createElement("div");
+  easeOfUseRating.innerHTML = `
+  <div class="p-4">
+<p class="text-lg font-medium mb-2">How was the ease of use?</p>
+<div class="flex space-x-2">
+<button class="px-4 py-2 rounded-lg bg-green-500 text-white hover:bg-green-600 focus:outline-none" onclick="setRating('easeOfUse', 'happy')">Happy</button>
+<button class="px-4 py-2 rounded-lg bg-gray-500 text-white hover:bg-gray-600 focus:outline-none" onclick="setRating('easeOfUse', 'neutral')">Neutral</button>
+<button class="px-4 py-2 rounded-lg bg-red-500 text-white hover:bg-red-600 focus:outline-none" onclick="setRating('easeOfUse', 'sad')">Sad</button>
+</div>
+</div>
+`;
+  ratingContainer.appendChild(easeOfUseRating);
 
-    // You can use the values of question1, question2, and question3
-    // to submit the survey response to your server or perform any other action
-    
-    // Close the questions modal
-    closeQuestionsModal();
+  document.body.appendChild(ratingContainer);
 }
