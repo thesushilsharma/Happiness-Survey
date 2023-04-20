@@ -55,9 +55,9 @@ function rateService(rating) {
   <div class="p-4">
   <p class="text-lg font-medium mb-2">How was the technical performance?</p>
   <div class="flex space-x-2">
-<button class="px-4 py-2 rounded-lg bg-green-500 text-white hover:bg-green-600 focus:outline-none" onclick="setRating('technicalPerformance', 'happy')">Happy</button>
-<button class="px-4 py-2 rounded-lg bg-gray-500 text-white hover:bg-gray-600 focus:outline-none" onclick="setRating('technicalPerformance', 'neutral')">Neutral</button>
-<button class="px-4 py-2 rounded-lg bg-red-500 text-white hover:bg-red-600 focus:outline-none" onclick="setRating('technicalPerformance', 'sad')">Sad</button>
+<button class="px-4 py-2 rounded-lg bg-green-500 text-white hover:bg-green-600 focus:outline-none" onclick="setRating('technicalPerformance', 'happy')">😀</button>
+<button class="px-4 py-2 rounded-lg bg-gray-500 text-white hover:bg-gray-600 focus:outline-none" onclick="setRating('technicalPerformance', 'neutral')">😐</button>
+<button class="px-4 py-2 rounded-lg bg-red-500 text-white hover:bg-red-600 focus:outline-none" onclick="setRating('technicalPerformance', 'sad')">😞</button>
 </div>
 </div>`;
   ratingContainer.appendChild(technicalPerformanceRating);
@@ -67,9 +67,9 @@ function rateService(rating) {
   <div class="p-4">
   <p class="text-lg font-medium mb-2">How was the presentation clarity?</p>
   <div class="flex space-x-2">
-<button class="px-4 py-2 rounded-lg bg-green-500 text-white hover:bg-green-600 focus:outline-none" onclick="setRating('presentationClarity', 'happy')">Happy</button>
-<button class="px-4 py-2 rounded-lg bg-gray-500 text-white hover:bg-gray-600 focus:outline-none" onclick="setRating('presentationClarity', 'neutral')">Neutral</button>
-<button class="px-4 py-2 rounded-lg bg-red-500 text-white hover:bg-red-600 focus:outline-none" onclick="setRating('presentationClarity', 'sad')">Sad</button>
+<button class="px-4 py-2 rounded-lg bg-green-500 text-white hover:bg-green-600 focus:outline-none" onclick="setRating('presentationClarity', 'happy')">😀</button>
+<button class="px-4 py-2 rounded-lg bg-gray-500 text-white hover:bg-gray-600 focus:outline-none" onclick="setRating('presentationClarity', 'neutral')">😐</button>
+<button class="px-4 py-2 rounded-lg bg-red-500 text-white hover:bg-red-600 focus:outline-none" onclick="setRating('presentationClarity', 'sad')">😞</button>
 </div>
 </div> 
 `;
@@ -79,9 +79,9 @@ function rateService(rating) {
   <div class="p-4">
 <p class="text-lg font-medium mb-2">How was the ease of use?</p>
 <div class="flex space-x-2">
-<button class="px-4 py-2 rounded-lg bg-green-500 text-white hover:bg-green-600 focus:outline-none" onclick="setRating('easeOfUse', 'happy')">Happy</button>
-<button class="px-4 py-2 rounded-lg bg-gray-500 text-white hover:bg-gray-600 focus:outline-none" onclick="setRating('easeOfUse', 'neutral')">Neutral</button>
-<button class="px-4 py-2 rounded-lg bg-red-500 text-white hover:bg-red-600 focus:outline-none" onclick="setRating('easeOfUse', 'sad')">Sad</button>
+<button class="px-4 py-2 rounded-lg bg-green-500 text-white hover:bg-green-600 focus:outline-none" onclick="setRating('easeOfUse', 'happy')">😀</button>
+<button class="px-4 py-2 rounded-lg bg-gray-500 text-white hover:bg-gray-600 focus:outline-none" onclick="setRating('easeOfUse', 'neutral')">😐</button>
+<button class="px-4 py-2 rounded-lg bg-red-500 text-white hover:bg-red-600 focus:outline-none" onclick="setRating('easeOfUse', 'sad')">😞</button>
 </div>
 </div>
 `;
