@@ -1,91 +1,47 @@
-const ratings = {
-  happy: {
-    technicalPerformance: null,
-    presentationClarity: null,
-    easeOfUse: null,
-  },
-  neutral: {
-    technicalPerformance: null,
-    presentationClarity: null,
-    easeOfUse: null,
-  },
-  sad: {
-    technicalPerformance: null,
-    presentationClarity: null,
-    easeOfUse: null,
-  },
-};
+// Add event listeners to buttons
+document.getElementById("happy-btn").addEventListener("click", function () {
+  showFeedbackTab(1, "happy-btn");
+});
+document.getElementById("neutral-btn").addEventListener("click", function () {
+  showFeedbackTab(1, "neutral-btn");
+});
+document.getElementById("sad-btn").addEventListener("click", function () {
+  showFeedbackTab(1, "sad-btn");
+});
 
-function setRating(category, rating) {
-  // Remove the previously selected button
-  const prevSelected = document.querySelector(`#${category} .selected`);
-  if (prevSelected) {
-    prevSelected.classList.remove("selected");
+// Show the specified feedback tab and hide the others
+function showFeedbackTab(tabIndex, buttonId) {
+  console.log("Clicked button:", buttonId);
+  // Get all feedback tab divs
+  var tabs = document.getElementsByTagName("div");
+
+  // Hide all feedback tabs
+  for (var i = 0; i < tabs.length; i++) {
+      tabs[i].style.display = "none";
   }
 
-  // Add the "selected" class to the newly selected button
-  const selectedButton = event.target;
-  selectedButton.classList.add("selected");
-
-  // Update the ratings object
-  ratings[rating][category] = true;
-  console.log("Thank you for rating our service!");
-  console.log(ratings);
-
-  // Check if all ratings are complete
-  const isComplete =
-    Object.keys(ratings.happy).every(
-      category =>
-        ratings.happy[category] !== null &&
-        ratings.neutral[category] !== null &&
-        ratings.sad[category] !== null
-    );
-
-  if (isComplete) {
-    console.log("All ratings are complete!");
-  }
+  // Show the specified feedback tab
+  tabs[tabIndex].style.display = "block";
 }
 
-function rateService(rating) {
-  const ratingContainer = document.createElement("div");
-  ratingContainer.id = `rating-${rating}`;
+function showPage(pageNumber) {
+  var pages = document.querySelectorAll('[id^="page"]');
+  for (var i = 0; i < pages.length; i++) {
+      pages[i].style.display = 'none';
+  }
+  document.getElementById('page' + pageNumber).style.display = 'block';
 
-  const technicalPerformanceRating = document.createElement("div");
-  technicalPerformanceRating.innerHTML = `
-  <div class="p-4">
-  <p class="text-lg font-medium mb-2">How was the technical performance?</p>
-  <div class="flex space-x-2">
-<button class="px-4 py-2 rounded-lg bg-green-500 text-white hover:bg-green-600 focus:outline-none" onclick="setRating('technicalPerformance', 'happy')">😀</button>
-<button class="px-4 py-2 rounded-lg bg-gray-500 text-white hover:bg-gray-600 focus:outline-none" onclick="setRating('technicalPerformance', 'neutral')">😐</button>
-<button class="px-4 py-2 rounded-lg bg-red-500 text-white hover:bg-red-600 focus:outline-none" onclick="setRating('technicalPerformance', 'sad')">😞</button>
-</div>
-</div>`;
-  ratingContainer.appendChild(technicalPerformanceRating);
+  if (pageNumber === 3) {
+      var performanceRating = document.querySelector('input[name="performance"]:checked').value;
+      var clarityRating = document.querySelector('input[name="clarity"]:checked').value;
+      var easeRating = document.querySelector('input[name="ease"]:checked').value;
+      // Code to send the ratings to a server or store them in local storage goes here
 
-  const presentationClarityRating = document.createElement("div");
-  presentationClarityRating.innerHTML = `
-  <div class="p-4">
-  <p class="text-lg font-medium mb-2">How was the presentation clarity?</p>
-  <div class="flex space-x-2">
-<button class="px-4 py-2 rounded-lg bg-green-500 text-white hover:bg-green-600 focus:outline-none" onclick="setRating('presentationClarity', 'happy')">😀</button>
-<button class="px-4 py-2 rounded-lg bg-gray-500 text-white hover:bg-gray-600 focus:outline-none" onclick="setRating('presentationClarity', 'neutral')">😐</button>
-<button class="px-4 py-2 rounded-lg bg-red-500 text-white hover:bg-red-600 focus:outline-none" onclick="setRating('presentationClarity', 'sad')">😞</button>
-</div>
-</div> 
-`;
-  ratingContainer.appendChild(presentationClarityRating);
-  const easeOfUseRating = document.createElement("div");
-  easeOfUseRating.innerHTML = `
-  <div class="p-4">
-<p class="text-lg font-medium mb-2">How was the ease of use?</p>
-<div class="flex space-x-2">
-<button class="px-4 py-2 rounded-lg bg-green-500 text-white hover:bg-green-600 focus:outline-none" onclick="setRating('easeOfUse', 'happy')">😀</button>
-<button class="px-4 py-2 rounded-lg bg-gray-500 text-white hover:bg-gray-600 focus:outline-none" onclick="setRating('easeOfUse', 'neutral')">😐</button>
-<button class="px-4 py-2 rounded-lg bg-red-500 text-white hover:bg-red-600 focus:outline-none" onclick="setRating('easeOfUse', 'sad')">😞</button>
-</div>
-</div>
-`;
-  ratingContainer.appendChild(easeOfUseRating);
+      // Send the ratings to the server or do something with them
+      console.log('Performance rating:', performanceRating);
+      console.log('Clarity rating:', clarityRating);
+      console.log('Ease rating:', easeRating);
 
-  document.body.appendChild(ratingContainer);
+      document.querySelector('form').reset();
+  }
 }
