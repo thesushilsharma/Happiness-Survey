@@ -11,11 +11,14 @@ CSS (with Tailwind CSS library)
 JavaScript
 
 ## How to Use
-[-] Clone this repository to your local machine.
-[-] Open the index.html file in your preferred web browser.
-[-] Click on one of the three rating buttons (Happy, Neutral, or Sad).
-[-] For each rating category, select one rating option from the dropdown list (Happy, Neutral, or Sad).
-[-] Once all categories have been rated, a message will be logged to the console stating that all ratings are complete.
+- Clone this repository to your local machine.
+- Open the index.html file in your preferred web browser.
+- Click on one of the three rating buttons (Happy, Neutral, or Sad).
+- For each rating category, select one rating option from the dropdown list (Happy, Neutral, or Sad).
+- Once all categories have been rated, a message will be logged to the console stating that all ratings are complete.
 
 ## Acknowledgments
 The Tailwind CSS library was used to quickly style the web application. More information on Tailwind CSS can be found on their official website.
+
+## License
+This project is licensed under the MIT License. See the [LICENSE](https://github.com/thesushilsharma/Happiness-Survey/blob/main/LICENSE) file for details.
