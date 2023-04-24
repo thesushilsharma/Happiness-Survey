@@ -1,0 +1,16 @@
+button {
+    font-size: 4xl;
+  }
+  
+  #happy-btn:hover {
+    color: red;
+  }
+  
+  #neutral-btn:hover {
+    color: yellow;
+  }
+  
+  #sad-btn:hover {
+    color: blue;
+  }
+  

@@ -1,3 +1,26 @@
+document.getElementById("happy-btn").addEventListener("mouseover", function() {
+  this.innerHTML = "😃";
+});
+
+document.getElementById("neutral-btn").addEventListener("mouseover", function() {
+  this.innerHTML = "😑";
+});
+
+document.getElementById("sad-btn").addEventListener("mouseover", function() {
+  this.innerHTML = "☹️";
+});
+
+document.getElementById("happy-btn").addEventListener("mouseleave", function() {
+  this.innerHTML = "😊";
+});
+
+document.getElementById("neutral-btn").addEventListener("mouseleave", function() {
+  this.innerHTML = "😐";
+});
+
+document.getElementById("sad-btn").addEventListener("mouseleave", function() {
+  this.innerHTML = "😔";
+});
 // Add event listeners to buttons
 document.getElementById("happy-btn").addEventListener("click", function () {
   showFeedbackTab(1, "happy-btn");

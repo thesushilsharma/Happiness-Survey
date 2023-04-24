@@ -6,6 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Happiness Survey</title>
+  <link rel="stylesheet" href="assets/css/style.css">
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
@@ -14,61 +15,65 @@
     <h2 class="text-xl font-bold">Happiness Meter</h2>
   </header>
   <main class="container mx-auto py-4">
-    <div id="page1" class="text-center">
-      <h2 class="text-xl font-bold">How was your experience</h2>
-      <button id="happy-btn" class="text-4xl">😀</button>
-      <button id="neutral-btn" class="text-4xl">😐</button>
-      <button id="sad-btn" class="text-4xl">😔</button>
+    <div id="page1" class="text-center mx-auto my-8 lg:mx-0 lg:my-16">
+      <h2 class="text-4xl font-bold my-4">How was your experience ?</h2>
+      <button id="happy-btn" class="text-9xl px-4 py-2 bg-green-500 hover:bg-green-600 rounded-xl">😊</button>
+      <button id="neutral-btn" class="text-9xl px-4 py-2 bg-gray-200 hover:bg-gray-300 rounded-xl">😐</button>
+      <button id="sad-btn" class="text-9xl px-4 py-2 bg-red-500 hover:bg-red-600 rounded-xl">😔</button>
     </div>
 
-
-    <div id="page2" class="text-center mt-8" style="display: none">
-      <h2 class="text-xl font-bold">What can we improve?</h2>
+    <div id="page2" class="text-center mt-8 lg:mt-16" style="display: none">
       <form class="mt-4">
-        Technical performance:
-        <label>
-          <input type="radio" name="performance" value="happy" style="display: none" required>
-          <span class="emoji" aria-label="happy">😀</span>
-        </label>
-        <label>
-          <input type="radio" name="performance" value="neutral" style="display: none">
-          <span class="emoji" aria-label="neutral">😐</span>
-        </label>
-        <label>
-          <input type="radio" name="performance" value="sad" style="display: none">
-          <span class="emoji" aria-label="sad">😔</span>
-        </label>
-        <br>
-        Presentation clarity:
-        <label>
-          <input type="radio" name="clarity" value="happy" style="display: none" required>
-          <span class="emoji" aria-label="happy">😀</span>
-        </label>
-        <label>
-          <input type="radio" name="clarity" value="neutral" style="display: none">
-          <span class="emoji" aria-label="neutral">😐</span>
-        </label>
-        <label>
-          <input type="radio" name="clarity" value="sad" style="display: none">
-          <span class="emoji" aria-label="sad">😔</span>
-        </label>
-        <br>
-        Ease of use:
-        <label>
-          <input type="radio" name="ease" value="happy" style="display: none" required>
-          <span class="emoji" aria-label="happy">😀</span>
-        </label>
-        <label>
-          <input type="radio" name="ease" value="neutral" style="display: none">
-          <span class="emoji" aria-label="neutral">😐</span>
-        </label>
-        <label>
-          <input type="radio" name="ease" value="sad" style="display: none">
-          <span class="emoji" aria-label="sad">😔</span>
-        </label>
-        <br>
-        <button type="button" onclick="showPage(3)"
-          class="mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Submit</button>
+        <fieldset class="border border-gray-400 p-4">
+          <legend class="text-gray-700 text-xl font-medium">
+            What can we improve?
+          </legend>
+          Technical performance:
+          <label>
+            <input type="radio" name="performance" value="happy" style="display: none" required>
+            <span class="text-7xl" aria-label="happy">😊</span>
+          </label>
+          <label>
+            <input type="radio" name="performance" value="neutral" style="display: none">
+            <span class="text-7xl" aria-label="neutral">😐</span>
+          </label>
+          <label>
+            <input type="radio" name="performance" value="sad" style="display: none">
+            <span class="text-7xl" aria-label="sad">😔</span>
+          </label>
+          <br>
+          Presentation clarity:
+          <label>
+            <input type="radio" name="clarity" value="happy" style="display: none" required>
+            <span class="text-7xl" aria-label="happy">😊</span>
+          </label>
+          <label>
+            <input type="radio" name="clarity" value="neutral" style="display: none">
+            <span class="text-7xl" aria-label="neutral">😐</span>
+          </label>
+          <label>
+            <input type="radio" name="clarity" value="sad" style="display: none">
+            <span class="text-7xl" aria-label="sad">😔</span>
+          </label>
+          <br>
+          Ease of use:
+          <label>
+            <input type="radio" name="ease" value="happy" style="display: none" required>
+            <span class="text-7xl" aria-label="happy">😊</span>
+          </label>
+          <label>
+            <input type="radio" name="ease" value="neutral" style="display: none">
+            <span class="text-7xl" aria-label="neutral">😐</span>
+          </label>
+          <label>
+            <input type="radio" name="ease" value="sad" style="display: none">
+            <span class="text-7xl" aria-label="sad">😔</span>
+          </label>
+          <br>
+          <button type="button" onclick="showPage(3)"
+            class="mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-4 px-6 rounded">Submit</button>
+
+        </fieldset>
       </form>
     </div>
 
