@@ -1,34 +1,18 @@
-document.getElementById("happy-btn").addEventListener("touchstart", function() {
-  this.innerHTML = "😃";
-});
+const happy = document.getElementById("happy-btn");
+const neutral = document.getElementById("neutral-btn");
+const sad = document.getElementById("sad-btn");
 
-document.getElementById("neutral-btn").addEventListener("touchstart", function() {
-  this.innerHTML = "😑";
-});
-
-document.getElementById("sad-btn").addEventListener("touchstart", function() {
-  this.innerHTML = "☹️";
-});
-
-document.getElementById("happy-btn").addEventListener("touchend", function() {
-  this.innerHTML = "😊";
-});
-
-document.getElementById("neutral-btn").addEventListener("touchend", function() {
-  this.innerHTML = "😐";
-});
-
-document.getElementById("sad-btn").addEventListener("touchend", function() {
-  this.innerHTML = "😔";
-});
 // Add event listeners to buttons
-document.getElementById("happy-btn").addEventListener("click", function () {
+happy.addEventListener("click", function () {
+  document.body.style.backgroundColor = "lightgreen";
   showFeedbackTab(1, "happy-btn");
 });
-document.getElementById("neutral-btn").addEventListener("click", function () {
+neutral.addEventListener("click", function () {
+  document.body.style.backgroundColor = "gray";
   showFeedbackTab(1, "neutral-btn");
 });
-document.getElementById("sad-btn").addEventListener("click", function () {
+sad.addEventListener("click", function () {
+  document.body.style.backgroundColor = "tomato";
   showFeedbackTab(1, "sad-btn");
 });
 
@@ -40,7 +24,7 @@ function showFeedbackTab(tabIndex, buttonId) {
 
   // Hide all feedback tabs
   for (var i = 0; i < tabs.length; i++) {
-      tabs[i].style.display = "none";
+    tabs[i].style.display = "none";
   }
 
   // Show the specified feedback tab
@@ -50,21 +34,25 @@ function showFeedbackTab(tabIndex, buttonId) {
 function showPage(pageNumber) {
   var pages = document.querySelectorAll('[id^="page"]');
   for (var i = 0; i < pages.length; i++) {
-      pages[i].style.display = 'none';
+    pages[i].style.display = "none";
   }
-  document.getElementById('page' + pageNumber).style.display = 'block';
+  document.getElementById("page" + pageNumber).style.display = "block";
 
   if (pageNumber === 3) {
-      var performanceRating = document.querySelector('input[name="performance"]:checked').value;
-      var clarityRating = document.querySelector('input[name="clarity"]:checked').value;
-      var easeRating = document.querySelector('input[name="ease"]:checked').value;
-      // Code to send the ratings to a server or store them in local storage goes here
+    var performanceRating = document.querySelector(
+      'input[name="performance"]:checked'
+    ).value;
+    var clarityRating = document.querySelector(
+      'input[name="clarity"]:checked'
+    ).value;
+    var easeRating = document.querySelector('input[name="ease"]:checked').value;
+    // Code to send the ratings to a server or store them in local storage goes here
 
-      // Send the ratings to the server or do something with them
-      console.log('Performance rating:', performanceRating);
-      console.log('Clarity rating:', clarityRating);
-      console.log('Ease rating:', easeRating);
+    // Send the ratings to the server or do something with them
+    console.log("Performance rating:", performanceRating);
+    console.log("Clarity rating:", clarityRating);
+    console.log("Ease rating:", easeRating);
 
-      document.querySelector('form').reset();
+    document.querySelector("form").reset();
   }
 }

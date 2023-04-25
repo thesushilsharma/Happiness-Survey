@@ -1,16 +1,19 @@
 button {
-    font-size: 4xl;
-  }
-  
-  #happy-btn:active {
-    background-color: orange;
-  }
-  
-  #neutral-btn:active {
-    background-color: yellow;
-  }
-  
-  #sad-btn:active {
-    background-color: blue;
-  }
-  
+  font-size: 4xl;
+}
+
+#happy-btn:active {
+  background-color: orange;
+}
+
+#neutral-btn:active {
+  background-color: yellow;
+}
+
+#sad-btn:active {
+  background-color: blue;
+}
+
+span {
+  background-color: black;
+}

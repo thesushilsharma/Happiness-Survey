@@ -2,11 +2,11 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Happiness Survey</title>
-  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/style.css" />
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
@@ -17,68 +17,140 @@
   <main class="container mx-auto py-4">
     <div id="page1" class="text-center mx-auto my-8 lg:mx-0 lg:my-16">
       <h2 class="text-4xl font-bold my-4">How was your experience ?</h2>
-      <button id="happy-btn" class="text-9xl px-4 py-2 bg-green-500 rounded-xl">😊</button>
-      <button id="neutral-btn" class="text-9xl px-4 py-2 bg-gray-200 rounded-xl">😐</button>
-      <button id="sad-btn" class="text-9xl px-4 py-2 bg-red-500 rounded-xl">😔</button>
+      <button id="happy-btn" class="text-9xl px-4 py-2 bg-green-500 rounded-xl">
+        <img src="https://em-content.zobj.net/source/microsoft-teams/337/grinning-face_1f600.png" alt="" />
+      </button>
+      <button id="neutral-btn" class="text-9xl px-4 py-2 bg-gray-200 rounded-xl">
+        <img src="https://em-content.zobj.net/source/microsoft-teams/337/neutral-face_1f610.png" alt="" />
+      </button>
+      <button id="sad-btn" class="text-9xl px-4 py-2 bg-red-500 rounded-xl">
+        <img src="https://em-content.zobj.net/source/microsoft-teams/337/worried-face_1f61f.png" alt="" />
+      </button>
     </div>
 
     <div id="page2" class="text-center mt-8 lg:mt-16" style="display: none">
       <form class="mt-4">
         <fieldset class="border border-gray-400 p-4">
-          <legend class="text-gray-700 text-xl font-medium">
+          <legend class="text-gray-700 text-2xl font-black">
             What can we improve?
           </legend>
-          Technical performance:
-          <label>
-            <input type="radio" name="performance" value="happy" style="display: none" required>
-            <span class="text-7xl" aria-label="happy">😊</span>
-          </label>
-          <label>
-            <input type="radio" name="performance" value="neutral" style="display: none">
-            <span class="text-7xl" aria-label="neutral">😐</span>
-          </label>
-          <label>
-            <input type="radio" name="performance" value="sad" style="display: none">
-            <span class="text-7xl" aria-label="sad">😔</span>
-          </label>
-          <br>
-          Presentation clarity:
-          <label>
-            <input type="radio" name="clarity" value="happy" style="display: none" required>
-            <span class="text-7xl" aria-label="happy">😊</span>
-          </label>
-          <label>
-            <input type="radio" name="clarity" value="neutral" style="display: none">
-            <span class="text-7xl" aria-label="neutral">😐</span>
-          </label>
-          <label>
-            <input type="radio" name="clarity" value="sad" style="display: none">
-            <span class="text-7xl" aria-label="sad">😔</span>
-          </label>
-          <br>
-          Ease of use:
-          <label>
-            <input type="radio" name="ease" value="happy" style="display: none" required>
-            <span class="text-7xl" aria-label="happy">😊</span>
-          </label>
-          <label>
-            <input type="radio" name="ease" value="neutral" style="display: none">
-            <span class="text-7xl" aria-label="neutral">😐</span>
-          </label>
-          <label>
-            <input type="radio" name="ease" value="sad" style="display: none">
-            <span class="text-7xl" aria-label="sad">😔</span>
-          </label>
-          <br>
+          <table class="table-auto w-full m-4 p-4">
+            <tr>
+              <td class="text-left text-xl font-bold">
+                Technical performance:
+              </td>
+              <td class="px-4 py-2">
+                <label>
+                  <input type="radio" name="performance" value="happy" style="display: none" required />
+                  <span class="text-7xl" aria-label="happy"><img
+                      src="https://em-content.zobj.net/source/microsoft-teams/337/grinning-face-with-big-eyes_1f603.png"
+                      srcset="
+                          https://em-content.zobj.net/source/microsoft-teams/337/grinning-face-with-big-eyes_1f603.png 2x
+                        " alt="Happy Emotion" width="120" height="120" /></span>
+                </label>
+              </td>
+              <td class="px-4 py-2">
+                <label>
+                  <input type="radio" name="performance" value="neutral" style="display: none" />
+                  <span class="text-7xl" aria-label="neutral"><img
+                      src="https://em-content.zobj.net/source/microsoft-teams/337/face-with-rolling-eyes_1f644.png"
+                      alt="Neutral Emotion" width="120" height="120" srcset="
+                          https://em-content.zobj.net/source/microsoft-teams/337/face-with-rolling-eyes_1f644.png 2x
+                        " /></span>
+                </label>
+              </td>
+              <td class="px-4 py-2">
+                <label>
+                  <input type="radio" name="performance" value="sad" style="display: none" />
+                  <span class="text-7xl" aria-label="sad"><img srcset="
+                          https://em-content.zobj.net/source/microsoft-teams/337/frowning-face_2639-fe0f.png 2x
+                        " alt="Sad Emotion" width="120" height="120"
+                      src="https://em-content.zobj.net/source/microsoft-teams/337/frowning-face_2639-fe0f.png" /></span>
+                </label>
+              </td>
+            </tr>
+            <tr>
+              <td class="text-left text-xl font-bold">
+                Presentation clarity:
+              </td>
+              <td class="px-4 py-2">
+                <label>
+                  <input type="radio" name="clarity" value="happy" style="display: none" required />
+                  <span class="text-7xl" aria-label="happy"><img
+                      src="https://em-content.zobj.net/source/microsoft-teams/337/grinning-face-with-big-eyes_1f603.png"
+                      srcset="
+                          https://em-content.zobj.net/source/microsoft-teams/337/grinning-face-with-big-eyes_1f603.png 2x
+                        " alt="Happy Emotion" width="120" height="120" /></span>
+                </label>
+              </td>
+              <td class="px-4 py-2">
+                <label>
+                  <input type="radio" name="clarity" value="neutral" style="display: none" />
+                  <span class="text-7xl" aria-label="neutral"><img
+                      src="https://em-content.zobj.net/source/microsoft-teams/337/face-with-rolling-eyes_1f644.png"
+                      alt="Neutral Emotion" width="120" height="120" srcset="
+                          https://em-content.zobj.net/source/microsoft-teams/337/face-with-rolling-eyes_1f644.png 2x
+                        " /></span>
+                </label>
+              </td>
+              <td class="px-4 py-2">
+                <label>
+                  <input type="radio" name="clarity" value="sad" style="display: none" />
+                  <span class="text-7xl" aria-label="sad"><img srcset="
+                          https://em-content.zobj.net/source/microsoft-teams/337/frowning-face_2639-fe0f.png 2x
+                        " alt="Sad Emotion" width="120" height="120"
+                      src="https://em-content.zobj.net/source/microsoft-teams/337/frowning-face_2639-fe0f.png" /></span>
+                </label>
+              </td>
+            </tr>
+            <tr>
+              <td class="text-left text-xl font-bold">Ease of use:</td>
+              <td class="px-4 py-2">
+                <label>
+                  <input type="radio" name="ease" value="happy" style="display: none" required />
+                  <span class="text-7xl" aria-label="happy"><img
+                      src="https://em-content.zobj.net/source/microsoft-teams/337/grinning-face-with-big-eyes_1f603.png"
+                      srcset="
+                          https://em-content.zobj.net/source/microsoft-teams/337/grinning-face-with-big-eyes_1f603.png 2x
+                        " alt="Happy Emotion" width="120" height="120" /></span>
+                </label>
+              </td>
+              <td class="px-4 py-2">
+                <label>
+                  <input type="radio" name="ease" value="neutral" style="display: none" />
+                  <span class="text-7xl bg" aria-label="neutral"><img
+                      src="https://em-content.zobj.net/source/microsoft-teams/337/face-with-rolling-eyes_1f644.png"
+                      alt="Neutral Emotion" width="120" height="120" srcset="
+                          https://em-content.zobj.net/source/microsoft-teams/337/face-with-rolling-eyes_1f644.png 2x
+                        " /></span>
+                </label>
+              </td>
+              <td class="px-4 py-2">
+                <label>
+                  <input type="radio" name="ease" value="sad" style="display: none" />
+                  <span class="text-7xl" aria-label="sad"><img srcset="
+                          https://em-content.zobj.net/source/microsoft-teams/337/frowning-face_2639-fe0f.png 2x
+                        " alt="Sad Emotion" width="120" height="120"
+                      src="https://em-content.zobj.net/source/microsoft-teams/337/frowning-face_2639-fe0f.png" /></span>
+                </label>
+              </td>
+            </tr>
+          </table>
+
           <button type="button" onclick="showPage(3)"
-            class="mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-4 px-6 rounded">Submit</button>
+            class="mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-4 px-6 rounded">
+            Submit
+          </button>
         </fieldset>
       </form>
     </div>
 
     <div id="page3" class="text-center mx-auto my-8 lg:my-16" style="display: none">
       <h2 class="text-xl font-bold">Thank you for your feedback!</h2>
-      <p class="text-md">We appreciate your time and your valuable feedback. Your input helps us improve our service.</p>
+      <p class="text-md">
+        We appreciate your time and your valuable feedback. Your input helps
+        us improve our service.
+      </p>
     </div>
   </main>
 
