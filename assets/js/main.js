@@ -56,3 +56,24 @@ function showPage(pageNumber) {
     document.querySelector("form").reset();
   }
 }
+
+function changeBg(event) {
+  // Get the TD element that was clicked
+  var td = event.target;
+
+  // If the TD element is already clicked, reset its background color to white
+  if (td.classList.contains("clicked")) {
+    td.style.backgroundColor = '';
+  } else {
+    // Otherwise, set its background color to black
+    td.style.backgroundColor = "black";
+    // Add the "clicked" class to the TD element
+    td.classList.add("clicked");
+    // Remove the "clicked" class from all other TD elements in the same row
+    
+  }
+}
+
+// Add an event listener to the TD elements in the table
+var table = document.getElementById("myTable");
+table.addEventListener("click", changeBg, false);
