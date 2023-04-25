@@ -3,14 +3,14 @@ button {
   }
   
   #happy-btn:active {
-    color: red;
+    background-color: orange;
   }
   
   #neutral-btn:active {
-    color: yellow;
+    background-color: yellow;
   }
   
   #sad-btn:active {
-    color: blue;
+    background-color: blue;
   }
   
