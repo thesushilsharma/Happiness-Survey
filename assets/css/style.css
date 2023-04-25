@@ -2,15 +2,15 @@ button {
     font-size: 4xl;
   }
   
-  #happy-btn:hover {
+  #happy-btn:active {
     color: red;
   }
   
-  #neutral-btn:hover {
+  #neutral-btn:active {
     color: yellow;
   }
   
-  #sad-btn:hover {
+  #sad-btn:active {
     color: blue;
   }
   
