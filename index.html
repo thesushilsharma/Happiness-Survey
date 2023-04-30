@@ -155,7 +155,31 @@
     </div>
   </main>
 
+  <script src="https://code.jquery.com/jquery-3.6.4.slim.min.js"
+    integrity="sha256-a2yjHM4jnF9f54xUQakjZGaqYs/V1CYvWpoqZzC2/Bw=" crossorigin="anonymous"></script>
   <script src="assets/js/main.js"></script>
+  <script>
+    $(document).ready(function () {
+      // Define the mappings between radio button groups and background colors
+      var groupColorMap = {
+        'performance': 'bg-purple-300',
+        'clarity': 'bg-pink-300',
+        'ease': 'bg-orange-300'
+      };
+
+      // Attach the change event handler to all radio buttons in the page
+      $('input[type="radio"]').change(function () {
+        // Get the name of the radio button group
+        var groupName = $(this).attr('name');
+        // Get the background color for the group
+        var bgColor = groupColorMap[groupName];
+        // Reset all background colors for the group
+        $('input[type="radio"][name="' + groupName + '"]').closest('td').removeClass(bgColor);
+        // Set background color for selected radio's parent td
+        $(this).closest('td').addClass(bgColor);
+      });
+    });
+  </script>
 </body>
 
 </html>
