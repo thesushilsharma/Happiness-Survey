@@ -77,3 +77,13 @@ function changeBg(event) {
 // Add an event listener to the TD elements in the table
 var table = document.getElementById("myTable");
 table.addEventListener("click", changeBg, false);
+
+window.addEventListener("load", () => {
+  const loader = document.querySelector(".loader");
+
+  loader.classList.add("loader--hidden");
+
+  loader.addEventListener("transitionend", () => {
+    document.body.removeChild(loader);
+  });
+});

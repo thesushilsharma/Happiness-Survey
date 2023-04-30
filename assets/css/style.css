@@ -17,3 +17,37 @@ button {
 span {
   background-color: black;
 }
+
+.loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #333333;
+  transition: opacity 2s, visibility 2s;
+}
+
+.loader--hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.loader::after {
+  content: "";
+  width: 75px;
+  height: 75px;
+  border: 15px solid #dddddd;
+  border-top-color: #766DF4;
+  border-radius: 50%;
+  animation: loading 3s infinite;
+}
+
+@keyframes loading {
+  100% {
+    transform: rotate(0.5turn);
+  }
+}
