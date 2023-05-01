@@ -2,18 +2,47 @@ const happy = document.getElementById("happy-btn");
 const neutral = document.getElementById("neutral-btn");
 const sad = document.getElementById("sad-btn");
 
-// Add event listeners to buttons
+function buttonClick(buttonType) {
+  let body = document.body;
+  let backgroundColor = "";
+  let feedbackTab = "";
+  let rotation = "";
+
+  if (buttonType === "happy") {
+    backgroundColor = "#D1EFB5";
+    feedbackTab = "happy-btn";
+    rotation = "180deg";
+  } else if (buttonType === "neutral") {
+    backgroundColor = "#C9B6BE  ";
+    feedbackTab = "neutral-btn";
+    rotation = "90deg";
+  } else if (buttonType === "sad") {
+    backgroundColor = "#F4796B";
+    feedbackTab = "sad-btn";
+    rotation = "0deg";
+  }
+
+  body.style.backgroundColor = backgroundColor;
+  body.style.transition =
+    "transform 1s ease-in-out, background-color 1s ease-in-out";
+  body.style.transform = "rotate(" + rotation + ")";
+  showFeedbackTab(1, feedbackTab);
+
+  setTimeout(function () {
+    body.style.transform = "rotate(0deg)";
+  }, 500);
+}
+
 happy.addEventListener("click", function () {
-  document.body.style.backgroundColor = "lightgreen";
-  showFeedbackTab(1, "happy-btn");
+  buttonClick("happy");
 });
+
 neutral.addEventListener("click", function () {
-  document.body.style.backgroundColor = "gray";
-  showFeedbackTab(1, "neutral-btn");
+  buttonClick("neutral");
 });
+
 sad.addEventListener("click", function () {
-  document.body.style.backgroundColor = "tomato";
-  showFeedbackTab(1, "sad-btn");
+  buttonClick("sad");
 });
 
 // Show the specified feedback tab and hide the others
@@ -66,5 +95,4 @@ window.addEventListener("load", () => {
       document.body.removeChild(loader);
     }
   });
-
 });
